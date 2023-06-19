@@ -29,4 +29,12 @@ data("penguins")
 # eixo Y do sistema de coordenadas. Neste caso, deseja-se mapear a variável 
 # “flipper_length_mm” no eixo X e a variável “body_mass_g” no eixo Y.
 
-ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g)) + geom_point()
+ggplot(
+  data = penguins, 
+  mapping = aes(
+    x = flipper_length_mm, 
+    y = body_mass_g,
+    colour = species
+    )
+  ) + geom_point() + labs(y = "Peso (em gramas)", x = "Tamanho (em milímetros)", colour = 'Espécie')
+
