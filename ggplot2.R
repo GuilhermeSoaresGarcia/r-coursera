@@ -1,0 +1,32 @@
+#install.packages("ggplot2")
+#install.packages("palmerpenguins")
+
+library(ggplot2)
+library(palmerpenguins)
+
+data("penguins")
+
+# 1) ggplot(data = penguins): Em ggplot2, um gráfico é iniciado com a função ggplot().
+# Ela cria um sistema de coordenadas ao qual é possível acrescentar camadas. O 
+# primeiro argumento da função ggplot() é o conjunto de dados a ser usado no 
+# gráfico. Neste caso, é “penguins”.
+
+# 2) +: Depois, acrescenta-se um símbolo “+” para adicionar uma nova camada ao seu
+#gráfico. O gráfico é finalizado adicionando uma ou mais camadas ao ggplot().
+
+# 3) geom_point(): Em seguida, deve-se escolher um geom adicionando uma função geom. 
+# A função geom_point() utiliza pontos para criar gráficos de dispersão, a função 
+# geom_bar usa barras para criar gráficos de barras, e assim por diante. Neste caso, 
+# escolha função geom_point para criar um gráfico de dispersão de pontos. O pacote 
+# ggplot2 vem com muitas funções geom diferentes. Você aprenderá mais sobre geoms 
+# posteriormente no curso.
+
+# 4) (mapping = aes(x = flipper_length_mm, y = body_mass_g)): Cada função geom em 
+# ggplot2 leva um argumento de mapeamento. Com isso, define-se como as variáveis do
+# seu conjunto de dados serão mapeadas de acordo com as propriedades visuais. O 
+# argumento de mapeamento sempre é combinado com a função aes(). Os argumentos x e
+# y da função aes() especificam quais variáveis devem ser mapeadas no eixo X e no 
+# eixo Y do sistema de coordenadas. Neste caso, deseja-se mapear a variável 
+# “flipper_length_mm” no eixo X e a variável “body_mass_g” no eixo Y.
+
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g)) + geom_point()
