@@ -34,7 +34,15 @@ ggplot(
   mapping = aes(
     x = flipper_length_mm, 
     y = body_mass_g,
-    colour = species
+    colour = species,
+    shape = species
     )
-  ) + geom_point() + labs(y = "Peso (em gramas)", x = "Tamanho (em milímetros)", colour = 'Espécie')
+  ) + 
+  geom_point() + 
+  
+  # labs(): Para mudar/definir os rótulos
+  labs(y = "Peso (em gramas)", x = "Tamanho (em milímetros)", colour = 'Espécie') + 
+  
+  # facet_grid: divide os quadros para cada um dos elementos da variável especificada
+  facet_grid(facets="species")
 
