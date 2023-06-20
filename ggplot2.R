@@ -36,10 +36,14 @@ ggplot(
     y = body_mass_g,
     colour = species,
     shape = species,
-    size = species
+    # size = species
     )
   ) + 
   geom_point() + 
+  
+  # geom_smooth: com essa função é possível mostrar linhas de tendência
+  geom_smooth(method="gam", 
+              formula = y ~s(x)) +
   
   # labs(): Para mudar/definir os rótulos
   labs(y = "Peso (em gramas)", x = "Tamanho (em milímetros)", colour = 'Espécie') + 
