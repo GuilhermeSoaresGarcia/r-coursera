@@ -35,7 +35,8 @@ ggplot(
     x = flipper_length_mm, 
     y = body_mass_g,
     colour = species,
-    shape = species
+    shape = species,
+    size = species
     )
   ) + 
   geom_point() + 
