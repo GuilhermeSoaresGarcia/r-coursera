@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r penguins, warning=FALSE}
 #install.packages("ggplot2")
 #install.packages("palmerpenguins")
 
